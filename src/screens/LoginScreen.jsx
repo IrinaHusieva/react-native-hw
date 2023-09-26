@@ -11,8 +11,8 @@ import {
     View,
   Linking
 } from "react-native";
-import Input from "../Components/input";
-import CustomButton from "../Components/CustomButton";
+import Input from "../components/input";
+import CustomButton from "../components/CustomButton";
 
 const LoginScreen = () => {
   const [email, setEmail] = useState("");
@@ -34,7 +34,7 @@ const LoginScreen = () => {
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styles.container}>
         <ImageBackground
-          source={require("../images/backgroundIMG.jpg")}
+          source={require("../assets/images/backgroundIMG.jpg")}
           style={styles.bgImg}
         >
           <KeyboardAvoidingView

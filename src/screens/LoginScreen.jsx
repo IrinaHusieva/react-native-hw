@@ -120,7 +120,7 @@ const navigation = useNavigation();
                     styleProps={
                       isKeyboardShowing ? { marginTop: 0 } : { marginTop: 27 }
                     }
-                    onPress={onLogin()}
+                    onPress={onLogin}
                   />
                 )}
               </View>

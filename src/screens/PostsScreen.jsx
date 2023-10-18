@@ -31,7 +31,7 @@ const s = StyleSheet.create({
     },
     headerText: {
         fontSize: 17,
-        fontWeight: 500,
+        fontWeight: 'medium',
         textAlign: 'center',
         color: '#212121',
     },

@@ -11,7 +11,7 @@ const MainStack = createStackNavigator();
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <MainStack.Navigator initialRouteName="PostsScreen">
+      <MainStack.Navigator initialRouteName="LoginScreen">
         <MainStack.Screen
           name="Registration"
           component={RegistrationScreen}

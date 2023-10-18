@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import {
+  Button,
   Image,
   ImageBackground,
   Keyboard,
@@ -13,6 +14,8 @@ import {
 } from "react-native";
 import Input from "../components/input";
 import CustomButton from "../components/CustomButton";
+import { useNavigation } from '@react-navigation/native';
+
 
 const RegistrationScreen = () => {
   const [login, setLogin] = useState("");
@@ -24,13 +27,16 @@ const RegistrationScreen = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isKeyboardShowing, setIsKeyboardShowing] = useState(false);
 
+  const navigation = useNavigation();
   const toggleShowPassword = () => setShowPassword((prev) => !prev);
 
   const onRegistration = () => {
+   
     setLogin("");
     setEmail("");
     setPassword("");
     console.log(`Login: ${login}\nEmail: ${email}\nPassword: ${password}`);
+    navigation.navigate('PostsScreen'); 
   };
 
   return (
@@ -153,7 +159,7 @@ const RegistrationScreen = () => {
                 <TouchableOpacity activeOpacity={0.7}>
                   <Text style={styles.noAccountMessage}>
                     Вже є акаунт?&nbsp;
-                    <Text>Увійти</Text>
+                    <Text onPress={() => navigation.navigate("Login")}>Увійти</Text>
                   </Text>
                 </TouchableOpacity>
               )}

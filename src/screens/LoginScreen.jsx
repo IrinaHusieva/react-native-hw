@@ -13,6 +13,8 @@ import {
 } from "react-native";
 import Input from "../components/input";
 import CustomButton from "../components/CustomButton";
+import { useNavigation } from '@react-navigation/native';
+import PostsScreen from "./PostsScreen";
 
 const LoginScreen = () => {
   const [email, setEmail] = useState("");
@@ -23,11 +25,12 @@ const LoginScreen = () => {
   const [isKeyboardShowing, setIsKeyboardShowing] = useState(false);
 
   const toggleShowPassword = () => setShowPassword((prev) => !prev);
-
+const navigation = useNavigation();
   const onLogin = () => {
     setEmail("");
     setPassword("");
     console.log(`Email: ${email}\nPassword: ${password}`);
+    navigation.navigate('PostsScreen');
   };
 
   return (
@@ -117,7 +120,7 @@ const LoginScreen = () => {
                     styleProps={
                       isKeyboardShowing ? { marginTop: 0 } : { marginTop: 27 }
                     }
-                    onPress={onLogin}
+                    onPress={onLogin()}
                   />
                 )}
               </View>
@@ -125,7 +128,7 @@ const LoginScreen = () => {
                 <TouchableOpacity activeOpacity={0.7}>
                   <Text style={styles.noAccountMessage}>
                     Немає акаунту?&nbsp;
-                                      <Text style={{ textDecorationLine: "underline" }}>
+                  <Text onPress={() => navigation.navigate("Registration")} style={{ textDecorationLine: "underline" }}>
                        Зареєструватися
                     </Text>
                   </Text>

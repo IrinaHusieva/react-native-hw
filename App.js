@@ -2,8 +2,7 @@ import React from 'react';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
-import { StatusBar } from 'expo-status-bar';
+import { useFonts } from "expo-font";
 import { StyleSheet, View } from 'react-native';
 
 import LoginScreen from './src/Screens/AuthPages/LoginScreen';
@@ -13,6 +12,15 @@ import Home from './src/Screens/HomePages/Home';
 const MainStack = createStackNavigator();
 
 export default function App() {
+   const [fontsLoaded] = useFonts({
+    "Roboto-regular": require("./src/assets/fonts/Roboto-Regular.ttf"),
+    "Roboto-medium": require("./src/assets/fonts/Roboto-Medium.ttf"),
+    "Roboto-bold": require("./src/assets/fonts/Roboto-Bold.ttf"),
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
   return (
     <View style={styles.container}>
       <NavigationContainer>
@@ -21,7 +29,6 @@ export default function App() {
           <MainStack.Screen name="Login" component={LoginScreen} />
           <MainStack.Screen name="Home" component={Home} />
         </MainStack.Navigator>
-        {/* <StatusBar style="auto" /> */}
       </NavigationContainer>
     </View>
   );

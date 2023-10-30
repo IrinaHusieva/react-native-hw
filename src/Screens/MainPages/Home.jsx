@@ -49,7 +49,7 @@ const Home = () => {
       }}
     >
       <Tabs.Screen
-        name="PostsScreen"
+        name="Публікації"
         component={PostsScreen}
         options={{
           tabBarIcon: renderPostsTabBarIcon,

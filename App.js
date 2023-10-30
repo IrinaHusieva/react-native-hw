@@ -42,7 +42,7 @@ export default function App() {
         />
         <Stack.Screen name="PostsScreen" component={PostsScreen} />
         <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
-        <Stack.Screen name="MapScreen" component={MapScreen} />
+        <Stack.Screen name="MapScreen" component={MapScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="CommentsScreen" component={CommentsScreen} />
       </Stack.Navigator>
     </NavigationContainer>

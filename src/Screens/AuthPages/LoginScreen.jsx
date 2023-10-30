@@ -167,6 +167,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
     backgroundColor: '#fff',
+    paddingBottom: 111,
   },
   title: {
     color: '#212121',
@@ -207,8 +208,8 @@ const styles = StyleSheet.create({
     fontWeight: 400,
   },
   showPassword: {
-    top: -45,
-    left: 130,
+    top: -44,
+    left: 110,
   },
   showPasswordText: {
     color: '#1B4371',

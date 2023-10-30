@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { View } from 'react-native';
-import { useRoute } from '@react-navigation/native';
+import { View, TouchableOpacity } from 'react-native';
+import { useRoute, useNavigation } from '@react-navigation/native';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet, Dimensions, Text } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 
 const MapScreen = () => {
+  const navigation = useNavigation();
   const {
     params: {
       params: { geoLocation },
@@ -30,9 +32,16 @@ const MapScreen = () => {
       setPhotoLocation(coords);
     })();
   }, []);
+  const handleReturnPress = () => {
+    navigation.goBack();
+  };
 
   return (
     <View style={styles.containerFullView}>
+      <TouchableOpacity onPress={handleReturnPress}>
+        <Ionicons name="arrow-back" size={24} color="black" />
+        {/* <Text>BACK</Text> */}
+        </TouchableOpacity>
       <MapView
         style={styles.mapStyles}
         region={{

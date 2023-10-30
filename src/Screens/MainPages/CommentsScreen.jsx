@@ -7,6 +7,7 @@ import {
   ScrollView,
   TouchableOpacity,
   TextInput,
+  KeyboardAvoidingView
 } from 'react-native';
 import { Ionicons, AntDesign } from '@expo/vector-icons';
 import { StyleSheet } from 'react-native';
@@ -89,12 +90,12 @@ const CommentsScreen = () => {
           );
         })}
       </ScrollView>
-      <View style={styles.container}>
-        <TextInput style={styles.input} placeholder="Коментувати..." />
-        <TouchableOpacity style={styles.button}>
-          <AntDesign name="arrowup" size={24} color="#fff" />
-        </TouchableOpacity>
-      </View>
+       <KeyboardAvoidingView style={styles.container}>
+      <TextInput style={styles.input} placeholder="Коментувати..." />
+      <TouchableOpacity style={styles.button}>
+        <AntDesign name="arrowup" size={24} color="#fff" />
+      </TouchableOpacity>
+    </KeyboardAvoidingView>
     </View>
   );
 };

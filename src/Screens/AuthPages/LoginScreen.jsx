@@ -70,14 +70,14 @@ export default function LoginScreen() {
     >
       <View style={styles.container}>
         <ImageBackground source={wallpaper} style={styles.backgroundImage}>
-          <KeyboardAvoidingView
-            behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
-            style={styles.containerKeyBoard}
-          >
+         <KeyboardAvoidingView
+              behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
+              style={isShowKeybord ? { ...styles.containerKeyBoard, paddingBottom: 0 } : styles.containerKeyBoard}
+>
             <View
               style={{
                 ...styles.innerContainer,
-                height: isShowKeybord ? 500 : 450,
+                // height: isShowKeybord ? 500 : 450,
               }}
             >
               <Text style={styles.title}>Увійти</Text>
@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
     backgroundColor: '#fff',
-    paddingBottom: 111,
+    // paddingBottom: 111,
   },
   title: {
     color: '#212121',

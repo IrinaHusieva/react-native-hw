@@ -74,13 +74,13 @@ export default function RegistrationScreen() {
       <View style={styles.container}>
         <ImageBackground source={wallpaper} style={styles.backgroundImage}>
           <KeyboardAvoidingView
-            behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
-            style={styles.containerKeyBoard}
-          >
+           behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
+           style={isShowKeybord ? { ...styles.containerKeyBoard, paddingBottom: 0 } : styles.containerKeyBoard}
+           >
             <View
               style={{
                 ...styles.innerContainer,
-                height: isShowKeybord ? 620 : 550,
+                // height: isShowKeybord ? 620 : 550,
               }}
             >
               <View style={styles.avatar}>
@@ -188,7 +188,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
     backgroundColor: '#fff',
-    paddingBottom: 145,
+    // paddingBottom: 145,
   },
   avatar: {
     marginTop: -60,

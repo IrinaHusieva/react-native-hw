@@ -3,7 +3,7 @@ import { View, TouchableOpacity } from 'react-native';
 import { useRoute, useNavigation } from '@react-navigation/native';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
-import { StyleSheet, Dimensions, Text } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 const MapScreen = () => {
@@ -38,10 +38,9 @@ const MapScreen = () => {
 
   return (
     <View style={styles.containerFullView}>
-      <TouchableOpacity onPress={handleReturnPress}>
+      <TouchableOpacity onPress={handleReturnPress} style={styles.backButton}>
         <Ionicons name="arrow-back" size={24} color="black" />
-        {/* <Text>BACK</Text> */}
-        </TouchableOpacity>
+      </TouchableOpacity>
       <MapView
         style={styles.mapStyles}
         region={{
@@ -67,12 +66,15 @@ const styles = StyleSheet.create({
   containerFullView: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   mapStyles: {
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
+    flex: 1,
+  },
+  backButton: {
+    position: 'absolute',
+    top: 40,
+    left: 16,
+    zIndex: 1,
   },
 });
 

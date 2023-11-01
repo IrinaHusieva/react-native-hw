@@ -75,13 +75,10 @@ export default function RegistrationScreen() {
         <ImageBackground source={wallpaper} style={styles.backgroundImage}>
           <KeyboardAvoidingView
            behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
-           style={isShowKeybord ? { ...styles.containerKeyBoard, paddingBottom: 0 } : styles.containerKeyBoard}
+           style={styles.containerKeyBoard}
            >
             <View
-              style={{
-                ...styles.innerContainer,
-                // height: isShowKeybord ? 620 : 550,
-              }}
+              style={isShowKeybord ? { ...styles.innerContainer, paddingBottom: 0 } : styles.innerContainer}
             >
               <View style={styles.avatar}>
                 <TouchableOpacity

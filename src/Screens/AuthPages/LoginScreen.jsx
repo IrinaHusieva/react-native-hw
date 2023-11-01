@@ -72,13 +72,9 @@ export default function LoginScreen() {
         <ImageBackground source={wallpaper} style={styles.backgroundImage}>
          <KeyboardAvoidingView
               behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
-              style={isShowKeybord ? { ...styles.containerKeyBoard, paddingBottom: 0 } : styles.containerKeyBoard}
->
+              style={styles.containerKeyBoard}>
             <View
-              style={{
-                ...styles.innerContainer,
-                // height: isShowKeybord ? 500 : 450,
-              }}
+              style={isShowKeybord ? { ...styles.innerContainer, paddingBottom: 0 } : styles.innerContainer}
             >
               <Text style={styles.title}>Увійти</Text>
               <TextInput
